@@ -34,6 +34,13 @@ jobs:
             sconsflags:  arch=x86_64
             bin: "./bin/godot.windows.editor.x86_64.mono.exe"
             build-mono: true
+          - name: Template w/ Mono (target=template_release, tests=yes , arch=x86_64)
+            cache-name: windows_template
+            target: template_release
+            tests: false
+            sconsflags: arch=x86_64 debug_symbols=no
+            bin: "./bin/windows_release.x86_64.mono.exe"
+            build-mono: true
 
     steps:
       - uses: actions/checkout@v4.1.1
